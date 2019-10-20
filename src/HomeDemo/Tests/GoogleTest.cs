@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using SeleniumTestsPOM.Pages.GooglePage;
-using System.IO;
-using System.Reflection;
+using SeleniumTestsPOM.Tests;
 
 namespace SeleniumTestsPOM
 {
@@ -16,7 +14,7 @@ namespace SeleniumTestsPOM
         [SetUp]
         public void SetUp()
         {
-            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            _driver = GlobalSeleniumSettings.DefaultDriver;
             _googlePage = new GooglePage(_driver);
         }
 

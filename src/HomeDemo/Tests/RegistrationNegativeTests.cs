@@ -1,16 +1,15 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
 using SeleniumTestsPOM.Pages.RegistrationNegativePage.LoginPage;
 using SeleniumTestsPOM.Pages.RegistrationPage;
-using System.IO;
-using System.Reflection;
+using SeleniumTestsPOM.Tests;
 
 namespace SeleniumTestsPOM
 {
     [TestFixture]
     public class RegistrationNegativeTests
     {
-        private ChromeDriver _driver;
+        private IWebDriver _driver;
         private RegistrationUser _user;
         private RegistrationPage _registartionPage;
         private Account _account;
@@ -18,7 +17,7 @@ namespace SeleniumTestsPOM
         [SetUp]
         public void SetUp()
         {
-            _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            _driver = GlobalSeleniumSettings.DefaultDriver;
             _registartionPage = new RegistrationPage(_driver);
             _user = UserFactory.CreateValidUser();
 
