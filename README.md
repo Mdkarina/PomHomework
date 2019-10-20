@@ -4,3 +4,4 @@ This homework contains all four requested tasks:
 2) QA Automation 
 3) Automationpractice registration page 
 4) Automationpractice Registration negative tests 
+5) One test about SeleniumGrid
